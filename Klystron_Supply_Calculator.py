@@ -40,14 +40,15 @@ def si_format(value, unit):
     prefix = prefixes.get(exponent, "")
     return f"{scaled_value:.0f} {prefix}{unit}"
 
-V_0 = 45000 # Initial voltage, the max for the klystron
-I_requested = 9 # Current requested for the klystron
+V_0 = 35000 # Initial voltage, the max for the klystron
+I_requested = 7.57 # Current requested for the klystron
 t_run = 10e-6 # Time to run the klystron for
 V_drop = 4000 # Voltage drop allowed
-t_run_values = [2e-6, 3e-6, 4e-6, 5e-6, 10e-6, 15e-6, 20e-6]
+t_run_values = [2e-6, 3e-6, 4e-6, 5e-6, 10e-6, 15e-6, 20e-6, 1e-3]
 V_drop_values = [500, 1000, 2000, 4000, 5000]
-capacitor_value = 1700e-12 # 1.7nF
-capacitor_price = 777 # Kr
+#capacitor_value = 1700e-12 # 1.7nF
+capacitor_value = 0.033e-6 # 1.7nF
+capacitor_price = 1400 # Kr
 def calculate_capacitance(I_requested, t_run, V_drop):
     C = (I_requested * t_run) / V_drop
     return C
